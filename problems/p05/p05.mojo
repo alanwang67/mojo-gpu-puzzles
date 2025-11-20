@@ -18,8 +18,9 @@ fn broadcast_add(
 ):
     row = thread_idx.y
     col = thread_idx.x
-    # FILL ME IN (roughly 2 lines)
-
+    
+    if row < size and col < size: 
+        output[row * size + col] = a[col] + b[row]
 
 # ANCHOR_END: broadcast_add
 def main():
@@ -35,7 +36,7 @@ def main():
         with a.map_to_host() as a_host, b.map_to_host() as b_host:
             for i in range(SIZE):
                 a_host[i] = i + 1
-                b_host[i] = i * 10
+                b_host[i] = i * 10  
 
             for i in range(SIZE):
                 for j in range(SIZE):

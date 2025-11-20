@@ -14,8 +14,9 @@ fn add_10(
     a: UnsafePointer[Scalar[dtype], MutAnyOrigin],
 ):
     i = thread_idx.x
-    # FILL ME IN (roughly 1 line)
-
+    # chore: look into if we need to do 10.0 or if it does 
+    # automatic type conversions 
+    output[i] = a[i] + 10
 
 # ANCHOR_END: add_10
 
