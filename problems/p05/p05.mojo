@@ -19,6 +19,7 @@ fn broadcast_add(
     row = thread_idx.y
     col = thread_idx.x
     
+    # note: I think the book's diagram for this problem is wrong 
     if row < size and col < size: 
         output[row * size + col] = a[col] + b[row]
 
